@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Liste des adresses IP</h1>
+<p id="ip-list">Aucune adresse IP à afficher pour le moment.</p>
+
+<script>
+function getIP(json) {
+    var ip = json.ip;
+    var ipList = document.getElementById('ip-list');
+    if (ipList.innerHTML === 'Aucune adresse IP à afficher pour le moment.') {
+        ipList.innerHTML = '';
+    }
+    ipList.innerHTML += ip + '<br>';
+}
+</script>
+<script type="text/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+</body>
+</html>
